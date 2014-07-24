@@ -1,6 +1,6 @@
 # NAME
 
-WebService::2Captcha - Blah blah blah
+WebService::2Captcha - API 2Captcha.com
 
 # SYNOPSIS
 
