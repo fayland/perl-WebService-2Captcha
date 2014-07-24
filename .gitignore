@@ -1,0 +1,7 @@
+/WebService-2Captcha-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
