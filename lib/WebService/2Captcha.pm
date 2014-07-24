@@ -139,7 +139,7 @@ sub request {
         }
     }
 
-    print Dumper(\$res); use Data::Dumper;
+    # print Dumper(\$res); use Data::Dumper;
 
     return $res->decoded_content;
 }
