@@ -73,6 +73,12 @@ WebService::2Captcha is for [https://2captcha.com/setting](https://2captcha.com/
 
     my $load = $w2c->load();
 
+## request
+
+    my $res = $w2c->request(action => 'getstats', date => $date);
+
+underlaying method to build request
+
 # AUTHOR
 
 Fayland Lam <fayland@gmail.com>
