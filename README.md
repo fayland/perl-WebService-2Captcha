@@ -48,6 +48,12 @@ WebService::2Captcha is for [https://2captcha.com/setting](https://2captcha.com/
         language => 1, # check https://2captcha.com/setting
     ) or die $w2c->errstr;
 
+## userrecaptcha
+
+    my $captcha_id = $w2c->userrecaptcha($googlekey, $pageurl);
+
+[https://2captcha.com/2captcha-api#solving\_recaptchav2\_new](https://2captcha.com/2captcha-api#solving_recaptchav2_new)
+
 ## get
 
     my $text = $w2c->get($captcha_id) or die $w2c->errstr;
