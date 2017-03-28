@@ -115,6 +115,23 @@ sub load {
     $self->request(url => 'http://2captcha.com/load.php');
 }
 
+sub userrecaptcha {
+    my ($self, $googlekey, $pageurl) = @_;
+
+    my $res = $self->request(
+        url => 'http://2captcha.com/in.php',
+        method => 'userrecaptcha',
+        googlekey => $googlekey,
+        pageurl => $pageurl,
+    );
+    if ($res !~ /OK/) {
+        $errstr = $res;
+        return;
+    }
+    $res =~ s/^OK\|//;
+    return $res;
+}
+
 sub request {
     my ($self, %params) = @_;
 
@@ -198,6 +215,12 @@ WebService::2Captcha is for L<https://2captcha.com/setting>
         phrase => 1,
         language => 1, # check https://2captcha.com/setting
     ) or die $w2c->errstr;
+
+=head2 userrecaptcha
+
+    my $captcha_id = $w2c->userrecaptcha($googlekey, $pageurl);
+
+L<https://2captcha.com/2captcha-api#solving_recaptchav2_new>
 
 =head2 get
 
